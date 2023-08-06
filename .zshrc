@@ -117,6 +117,10 @@ unsetopt nomatch
 PATH=$PATH:~/.local/bin:~/interpreters:~/bin
 eval "$(thefuck --alias heck)"
 
+# env changes
+export NVIM_CONFIG=~/.config/nvim/lua/user/init.lua
+export NVIM_CONFIG_PATH=~/.config/nvim/
+
 # Configure a sweet little neofetch
 alias starfetch="neofetch --ascii ~/ascii_star.txt --ascii_colors 3 --disable packages"
 # Colorful LS
@@ -132,6 +136,8 @@ bindkey '^ ' autosuggest-accept
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
 alias code="codium" # Code it
 alias gitstarted "~/.local/bin/gitstarted.sh"
+
+# Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
