@@ -114,7 +114,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 unsetopt nomatch
 
 # PATH changes: scripts dir, vscode dir, interpreters dir
-PATH=$PATH:~/.local/bin:~/interpreters
+PATH=$PATH:~/.local/bin:~/interpreters:~/bin
 eval "$(thefuck --alias heck)"
 
 # Configure a sweet little neofetch
@@ -128,5 +128,10 @@ bindkey '^ ' autosuggest-accept
 # Theme it
 (cat ~/.cache/wal/sequences &)
 
- # Dotfile it
-alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+ # Aliases
+alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
+alias code="codium" # Code it
+alias gitstarted "~/.local/bin/gitstarted.sh"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
