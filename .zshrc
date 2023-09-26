@@ -81,6 +81,7 @@ plugins=(
     )
 
 source $ZSH/oh-my-zsh.sh
+source ~/repos/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # User configuration
 
@@ -125,19 +126,31 @@ export NVIM_CONFIG_PATH=~/.config/nvim/
 alias starfetch="neofetch --ascii ~/ascii_star.txt --ascii_colors 3 --disable packages"
 # Colorful LS
 alias ls=logo-ls
+# I hate typing this out
+alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
 
 # We do a little zsh-autosuggestions customization
 bindkey '^ ' autosuggest-accept
 
 # Theme it
-(cat ~/.cache/wal/sequences &)
+declare -x | grep -q TABBY_PLUGINS || (cat ~/.cache/wal/sequences &) # Only theme if it's not Tabby terminal
 
  # Aliases
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
 alias code="codium" # Code it
-alias gitstarted "~/.local/bin/gitstarted.sh"
+alias gitstarted="~/.local/bin/gitstarted.sh"
+alias cls="clear"
+unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/b/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
