@@ -78,6 +78,7 @@ plugins=(
     pip
     vscode
     zsh-shift-select
+    rust
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,13 +115,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 # stupid zsh recognizes ? as a wildcard
 unsetopt nomatch
 
-# PATH changes: scripts dir, vscode dir, interpreters dir
-PATH=$PATH:~/.local/bin:~/interpreters:~/bin
-eval "$(thefuck --alias heck)"
-
-# env changes
-export NVIM_CONFIG=~/.config/nvim/lua/user/init.lua
-export NVIM_CONFIG_PATH=~/.config/nvim/
+eval "$(thefuck --alias heck)" # Command fixing
 
 # Configure a sweet little neofetch
 alias starfetch="neofetch --ascii ~/ascii_star.txt --ascii_colors 3 --disable packages"
@@ -137,8 +132,9 @@ declare -x | grep -q TABBY_PLUGINS || (cat ~/.cache/wal/sequences &) # Only them
 
  # Aliases
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
+alias lazydots='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias code="codium" # Code it
-alias gitstarted="~/.local/bin/gitstarted.sh"
+alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
 alias cls="clear"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 
