@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.local/share/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -115,6 +115,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 # stupid zsh recognizes ? as a wildcard
 unsetopt nomatch
 
+# Don't clutter my home dir pls
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
 eval "$(thefuck --alias heck)" # Command fixing
 
 # Configure a sweet little neofetch
@@ -128,7 +131,7 @@ alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
 bindkey '^ ' autosuggest-accept
 
 # Theme it
-declare -x | grep -q TABBY_PLUGINS || (cat ~/.cache/wal/sequences &) # Only theme if it's not Tabby terminal
+#declare -x | grep -q TABBY_PLUGINS || (cat ~/.cache/wal/sequences &) # Only theme if it's not Tabby terminal
 
  # Aliases
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
