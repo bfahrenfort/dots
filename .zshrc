@@ -141,3 +141,5 @@ alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
 alias cls="clear"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 
+# Program config
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
