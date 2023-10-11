@@ -79,10 +79,10 @@ plugins=(
     vscode
     zsh-shift-select
     rust
+    fast-syntax-highlighting
     )
 
 source $ZSH/oh-my-zsh.sh
-source ~/repos/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # User configuration
 
