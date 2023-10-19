@@ -37,6 +37,13 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
 eval "$(rbenv init -)"
 export PATH="$RBENV_ROOT/plugins/ruby-build/bin:$PATH"
 
+# Haskell
+# export CABAL_DIR="$XDG_DATA_HOME"/cabal
+export STACK_ROOT="$XDG_DATA_HOME"/stack
+export GHCUP_USE_XDG_DIRS=true
+[ -f "/home/b/.local/share/ghcup/env" ] && source "/home/b/.local/share/ghcup/env" # ghcup-env
+export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config                                                             
+
 # pnpm
 export PNPM_HOME="/home/b/.local/share/pnpm"
 case ":$PATH:" in
