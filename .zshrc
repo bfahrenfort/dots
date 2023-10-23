@@ -127,6 +127,8 @@ alias starfetch="neofetch --ascii ~/ascii_star.txt --ascii_colors 3 --disable pa
 alias ls=logo-ls
 # I hate typing this out
 alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
+# I use this so damn often in haskell
+alias stacking="stack build --fast --file-watch --exec" # whatever the exe name is
 
 # We do a little zsh-autosuggestions customization
 bindkey '^ ' autosuggest-accept
