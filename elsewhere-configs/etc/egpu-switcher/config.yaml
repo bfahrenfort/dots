@@ -3,7 +3,7 @@ detection:
     retries: 6
 egpu:
     driver: nvidia
-    id: 1215443592984803328
-
+    id: 1215449120607713651
 hooks:
-  egpu: /etc/egpu-switcher/egpu.sh
+    egpu: /etc/egpu-switcher/egpu.sh
+    internal: /etc/egpu-switcher/internal.sh
