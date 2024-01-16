@@ -116,15 +116,15 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 unsetopt nomatch
 
 # Don't clutter my home dir pls
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/"
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 eval "$(thefuck --alias heck)" # Command fixing
 
 # Configure a sweet little neofetch
-alias starfetch="neofetch --ascii ~/ascii_star.txt --ascii_colors 3 --disable packages"
+alias starfetch="neowofetch --ascii ~/ascii_star.txt --ascii_colors 3 "
 # Colorful LS
-alias ls=logo-ls
+alias ls="logo-ls -v"
 # I hate typing this out
 alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
 # I use this so damn often in haskell
@@ -134,7 +134,7 @@ alias stacking="stack build --fast --file-watch --exec" # whatever the exe name 
 bindkey '^ ' autosuggest-accept
 
 # Theme it
-#declare -x | grep -q TABBY_PLUGINS || (cat ~/.cache/wal/sequences &) # Only theme if it's not Tabby terminal
+# (cat ~/.cache/wal/sequences &)
 
  # Aliases
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
@@ -142,6 +142,7 @@ alias lazydots='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias code="codium" # Code it
 alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
 alias cls="clear"
+alias fyrox-editor="cargo run --package editor --release"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 
 # Program config
