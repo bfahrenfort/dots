@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo /etc/egpu-switcher/egpu.sh
