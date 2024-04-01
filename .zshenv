@@ -2,13 +2,15 @@
 # PATH changes: scripts dir, interpreters dir
 export PATH=$PATH:~/.local/bin:~/interpreters:~/bin
 
-# Other convenient variables
+# Because Fedora is a dummy
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
+
+# Other convenient variables
 export NVIM_CONFIG=~/.config/nvim/lua/user/init.lua
-export NVIM_CONFIG_PATH=~/.config/nvim/
+export NVIM_CONFIG_PATH=~/.config/nvim/lua/user
 
 # Clean up the Home directory
 export ANSIBLE_HOME="$XDG_DATA_HOME"/ansible
