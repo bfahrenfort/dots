@@ -121,17 +121,10 @@ export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
 
 eval "$(thefuck --alias heck)" # Command fixing
 
-# Configure a sweet little neofetch
-alias starfetch="neowofetch --ascii ~/ascii_star.txt --ascii_colors 3 "
-# Colorful LS
-alias ls="logo-ls -v"
-# I hate typing this out
-alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
-# I use this so damn often in haskell
-alias stacking="stack build --fast --file-watch --exec" # whatever the exe name is
-
 # We do a little zsh-autosuggestions customization
 bindkey '^ ' autosuggest-accept
+# setopt extendedglob
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE="gitstarted.sh *"
 
 # Theme it
 # (cat ~/.cache/wal/sequences &)
@@ -144,7 +137,17 @@ alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
 alias cls="clear"
 alias fyrox-editor="cargo run --package editor --release"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
+# Configure a sweet little neofetch
+alias starfetch="neowofetch --ascii ~/ascii_star.txt --ascii_colors 3 "
+# Colorful LS
+alias ls="logo-ls -v"
+# I hate typing this out
+alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
+# I use this so damn often in haskell
+alias stacking="stack build --fast --file-watch --exec" # whatever the exe name is
+# And again for Rust
+alias launchpad="cargo watch -x 'shuttle run'"
+alias launchpad-release="cargo watch -x 'shuttle run --release'"
 
 # Program config
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
