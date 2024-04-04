@@ -142,7 +142,7 @@ alias starfetch="neowofetch --ascii ~/ascii_star.txt --ascii_colors 3 "
 # Colorful LS
 alias ls="logo-ls -v"
 # I hate typing this out
-alias update-grub="sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 # I use this so damn often in haskell
 alias stacking="stack build --fast --file-watch --exec" # whatever the exe name is
 # And again for Rust
