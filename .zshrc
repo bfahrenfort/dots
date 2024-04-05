@@ -8,7 +8,8 @@ export ZSH="$HOME/.local/share/oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="peabody_edited"
+# ZSH_THEME="peabody_edited"
+ZSH_THEME="fino-edited"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -116,8 +117,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 unsetopt nomatch
 
 # Don't clutter my home dir pls
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+# export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 eval "$(thefuck --alias heck)" # Command fixing
 
