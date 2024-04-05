@@ -115,6 +115,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 # Custom stuff
 # stupid zsh recognizes ? as a wildcard
 unsetopt nomatch
+# dots status will now complete
+unsetopt completealiases
 
 # Don't clutter my home dir pls
 # export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
