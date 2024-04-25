@@ -4,6 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.local/share/oh-my-zsh"
 
+export HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -83,10 +88,15 @@ plugins=(
     fast-syntax-highlighting
     )
 
+# Don't clutter my home dir pls
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST"
+# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -117,10 +127,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6b6e5d"
 unsetopt nomatch
 # dots status will now complete
 unsetopt completealiases
-
-# Don't clutter my home dir pls
-# export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 eval "$(thefuck --alias heck)" # Command fixing
 
