@@ -159,4 +159,5 @@ alias launchpad="cargo watch -x 'shuttle run'"
 alias launchpad-release="cargo watch -x 'shuttle run --release'"
 
 # Program config
+export EDITOR=nvim
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
