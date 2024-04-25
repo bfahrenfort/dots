@@ -17,10 +17,13 @@ export ANSIBLE_HOME="$XDG_DATA_HOME"/ansible
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export LESSHISTFILE="$XDG_STATE_HOME"/less/history
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PYTHONSTARTUP="/etc/python/pythonrc"
+export W3M_DIR="$XDG_DATA_HOME"/w3m
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
 # Rust
