@@ -39,6 +39,22 @@ function box_name {
   echo "${box:gs/%/%%}"
 }
 
+function single_status_line {
+  local ruby_env='$(ruby_prompt_info)'
+  local git_info='$(git_prompt_info)'
+
+  if [[ -z $(git_prompt_info) && -z $(ruby_prompt_info) && -z $(virtualenv_prompt_info) ]] then
+    return
+  fi
+
+  echo -n "─$git_info"
+  if [[ ! -z $(git_prompt_info) && ! -z $(ruby_prompt_info) ]]; then
+    echo -n "╟"
+  fi
+  echo -n $ruby_env
+  echo "║"
+}
+
 function status_line {
   local ruby_env='$(ruby_prompt_info)'
   local git_info='$(git_prompt_info)'
@@ -62,17 +78,15 @@ local prompt_char='$(prompt_char)'
 precmd () {
   s=$(translate_status)
   local left="╭─${FG[039]}%n %B${FG[015]}at%b ${FG[141]}$(box_name) %B${FG[015]}in%b %B${FG[153]}%~%b"
-  PROMPT="$left
-├$(status_line)
-│$s
+  PROMPT="$left $(single_status_line)
 ╰─${prompt_char}%{$reset_color%} "
 
-#   local left="╭─${FG[039]}%n %B${FG[015]}at%b ${FG[141]}$(box_name) %B${FG[015]}in%b %B${FG[153]}%~%b${git_info}${ruby_env}${virtualenv_info}"
+# Alternate, four-line prompt
 #   PROMPT="$left
-# ├╮
+# ├$(status_line)
 # │$s
 # ╰─${prompt_char}%{$reset_color%} "
-  # RPROMPT=$s
+
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="─╢  ${FG[242]}on "
