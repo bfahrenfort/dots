@@ -129,6 +129,7 @@ unsetopt nomatch
 unsetopt completealiases
 
 eval $(thefuck --alias) # Command fixing
+eval "$(zoxide init zsh)" # Better cd
 
 # We do a little zsh-autosuggestions customization
 bindkey '^ ' autosuggest-accept
@@ -139,6 +140,7 @@ export ZSH_AUTOSUGGEST_HISTORY_IGNORE="gitstarted.sh *"
 # (cat ~/.cache/wal/sequences &)
 
  # Aliases
+alias cd='z' # theoretically I could do this with zoxide directly but that would remove z
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
 alias lazydots='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias code="codium" # Code it
