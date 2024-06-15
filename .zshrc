@@ -128,7 +128,7 @@ unsetopt nomatch
 # dots status will now complete
 unsetopt completealiases
 
-eval "$(thefuck --alias heck)" # Command fixing
+eval $(thefuck --alias) # Command fixing
 
 # We do a little zsh-autosuggestions customization
 bindkey '^ ' autosuggest-accept
