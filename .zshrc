@@ -144,6 +144,8 @@ for d in $ZSH/custom/completions/; do for f in $d; do source $f; done; done
 
 # Aliases
 alias cd='z' # theoretically I could do this with zoxide directly but that would remove z
+alias cpx='chmod +x $_' # I write a lot of scripts
+alias dbx='distrobox'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
 alias lazydots='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias code="codium" # Code it
@@ -162,7 +164,15 @@ alias stacking="stack build --fast --file-watch --exec" # whatever the exe name 
 # And again for Rust
 alias launchpad="cargo watch -x 'shuttle run'"
 alias launchpad-release="cargo watch -x 'shuttle run --release'"
+# Blender asset library add
+blend () {
+    ln -s "$(readlink -f ${1})" "$HOME/Documents/Blender/Assets/link-to-$(basename ${1})"
+}
+# I have a TUI package manager and I want it to use my aur helper
+alias parui="parui -p=aura"
 
 # Program config
 export EDITOR=nvim
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/gcr/ssh
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
