@@ -78,6 +78,7 @@ ZSH_THEME="fino-edited"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    # rbenv
     zsh-autosuggestions
     colored-man-pages
     dirhistory
@@ -91,6 +92,10 @@ plugins=(
 # Don't clutter my home dir pls
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST"
 # compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
+# Fix my prompt issues
+zstyle ':omz:alpha:lib:git' async-prompt no
+zstyle ':omz:alpha:lib:ruby' async-prompt no
 
 source $ZSH/oh-my-zsh.sh
 

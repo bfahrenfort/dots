@@ -27,6 +27,7 @@ function virtualenv_prompt_info {
   echo "${ZSH_THEME_VIRTUALENV_PREFIX:=[}${VIRTUAL_ENV:t}${ZSH_THEME_VIRTUALENV_SUFFIX:=]}"
 }
 
+# Very proud of this line
 FINAL=$'%B%F{red}›%f%F{green}›%f%F{yellow}›%f%b' 
 
 function prompt_char {
@@ -43,16 +44,17 @@ function single_status_line {
   local ruby_env='$(ruby_prompt_info)'
   local git_info='$(git_prompt_info)'
 
+  # If length of all infostrings is zero, no need to add statusline
   if [[ -z $(git_prompt_info) && -z $(ruby_prompt_info) && -z $(virtualenv_prompt_info) ]] then
     return
   fi
 
-  echo -n "─$git_info"
+  echo -n "$git_info"
   if [[ ! -z $(git_prompt_info) && ! -z $(ruby_prompt_info) ]]; then
-    echo -n "╟"
+    # echo -n "╟"
   fi
   echo -n $ruby_env
-  echo "║"
+  # echo "║"
 }
 
 function status_line {
@@ -89,10 +91,10 @@ precmd () {
 
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="─╢  ${FG[242]}on "
+ZSH_THEME_GIT_PROMPT_PREFIX="|  %B${FG[015]}on%b "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="${FG[202]}✘"
 ZSH_THEME_GIT_PROMPT_CLEAN="${FG[040]}✔"
 
-ZSH_THEME_RUBY_PROMPT_PREFIX="─╢  ${FG[239]}using${FG[243]} ‹"
+ZSH_THEME_RUBY_PROMPT_PREFIX="|  ${FG[239]}using${FG[243]} ‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%} "
