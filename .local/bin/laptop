@@ -1,3 +1,24 @@
 #!/bin/bash
 
-sudo /etc/egpu-switcher/internal.sh
+# sudo /etc/egpu-switcher/internal.sh
+
+function runasuser() {                                                                                                                                           
+    _display_id=":$(find /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"                                                                             
+    _username=$(who | grep "\(${_display_id}\)" | awk '{print $1}' | head -n 1)                                                                                  
+    _user_id=$(id -u "$_username")                                                                                                                               
+    _environment=("DISPLAY=$_display_id" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$_user_id/bus")                                                           
+    sudo -Hu "$_username" env "${_environment[@]}" "$@"                                                                                                          
+}
+
+sudo systemctl stop uksmd.service                                                                                                                                     
+sudo systemctl disable nvidia-persistenced.service                                                                                                                    
+                                                                                                                                                                 
+cp /home/b/.steam/steam/compatibilitytools.d/GE-Proton8-11/user_settings-intel.py /home/b/.steam/steam/compatibilitytools.d/GE-Proton8-11/user_settings.py       
+cp "/home/b/.local/share/Steam/steamapps/common/Proton - Experimental/user_settings-intel.py" "/home/b/.local/share/Steam/steamapps/common/Proton - Experimental/user_settings.py"                                                                                                                                                
+                                                                                                                                                                 
+rm /home/b/.local/bin/icd.json                                                                                                                                   
+ln -s /usr/share/vulkan/icd.d/intel_icd.x86_64.json /home/b/.local/bin/icd.json                                                                                  
+                                                                                                                                                                 
+tlp start # Force recheck of ac vs bat mode
+
+# gsettings set org.gnome.desktop.interface text-scaling-factor 0.7 # Not needed on Wayland
