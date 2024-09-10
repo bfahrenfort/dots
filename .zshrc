@@ -137,7 +137,9 @@ eval $(thefuck --alias) # Command fixing
 eval "$(zoxide init zsh)" # Better cd
 
 # We do a little zsh-autosuggestions customization
+bindkey -s '\e' '' # Pass through esc to nvim
 bindkey '^ ' autosuggest-accept
+# bindkey '^?' backward-kill-word
 # setopt extendedglob
 export ZSH_AUTOSUGGEST_HISTORY_IGNORE="gitstarted.sh *"
 
@@ -177,7 +179,7 @@ blend () {
 alias parui="parui -p=aura"
 
 # Program config
-export EDITOR=nvim
+# export EDITOR=nvim
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/gcr/ssh
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
