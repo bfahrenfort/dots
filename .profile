@@ -1,2 +1,2 @@
-export GTK_THEME=Nordic-Polar
+export GTK_THEME=Graphite-Light-compact-nord
 
