@@ -55,3 +55,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# TeX
+export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
+export TEXMFCONFIG="$XDG_CONFIG_HOME"/texlive
+export TEXMFHOME="$XDG_DATA_HOME"/texlive
+export TEXMFDIST="/usr/share/texmf-dist"
+export TEXMFLOCAL="/usr/local/share/texmf:/usr/share/texmf"
