@@ -138,6 +138,7 @@ eval "$(zoxide init zsh)" # Better cd
 
 # We do a little zsh-autosuggestions customization
 bindkey -s '\e' '' # Pass through esc to nvim
+bindkey -s '^F' 'fuck^M' # fix the command
 bindkey '^ ' autosuggest-accept
 # bindkey '^?' backward-kill-word
 # setopt extendedglob
