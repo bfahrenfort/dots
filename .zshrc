@@ -86,7 +86,8 @@ plugins=(
     vscode
     zsh-shift-select
     rust
-    fast-syntax-highlighting
+    # fast-syntax-highlighting
+    zsh-syntax-highlighting
     )
 
 # Don't clutter my home dir pls
@@ -162,7 +163,7 @@ alias cls="clear"
 alias fyrox-editor="cargo run --package editor --release"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 # Configure a sweet little neofetch
-alias starfetch="neowofetch --ascii ~/ascii_star.txt --ascii_colors 3 "
+alias starfetch="neowofetch --ascii ~/scripts/ascii_star.txt --ascii_colors 3 "
 # Colorful LS
 alias ls="logo-ls -v"
 # I hate typing this out
