@@ -63,3 +63,6 @@ export TEXMFCONFIG="$XDG_CONFIG_HOME"/texlive
 export TEXMFHOME="$XDG_DATA_HOME"/texlive
 export TEXMFDIST="/usr/share/texmf-dist"
 export TEXMFLOCAL="/usr/local/share/texmf:/usr/share/texmf"
+
+# Erlang?
+export MIX_HOME="$XDG_DATA_HOME"/mix
