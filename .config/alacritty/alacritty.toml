@@ -15,4 +15,4 @@ size = 10
 builtin_box_drawing = false
 
 [cursor]
-style = {}
+style = { shape = "Beam", blinking = "Off" }
