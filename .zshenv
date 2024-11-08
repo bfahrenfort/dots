@@ -57,6 +57,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# non-p npm
+export PATH="$PATH:$XDG_DATA_HOME/npm/bin/"
+
 # TeX
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 export TEXMFCONFIG="$XDG_CONFIG_HOME"/texlive
