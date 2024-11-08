@@ -181,7 +181,7 @@ blend () {
 alias parui="parui -p=aura"
 
 # Program config
-# export EDITOR=nvim
+export EDITOR=nvim
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/gcr/ssh
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
