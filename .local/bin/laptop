@@ -12,6 +12,9 @@ function runasuser() {
 
 sudo systemctl stop uksmd.service                                                                                                                                     
 sudo systemctl disable nvidia-persistenced.service                                                                                                                    
+sudo systemctl stop avahi-daemon
+sudo systemctl disable avahi-daemon
+sudo systemctl disable avahi-daemon.socket
                                                                                                                                                                  
 cp /home/b/.steam/steam/compatibilitytools.d/GE-Proton8-11/user_settings-intel.py /home/b/.steam/steam/compatibilitytools.d/GE-Proton8-11/user_settings.py       
 cp "/home/b/.local/share/Steam/steamapps/common/Proton - Experimental/user_settings-intel.py" "/home/b/.local/share/Steam/steamapps/common/Proton - Experimental/user_settings.py"                                                                                                                                                
