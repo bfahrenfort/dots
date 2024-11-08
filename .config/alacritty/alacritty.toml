@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
-]
 
 [window]
 decorations = "None"
@@ -8,11 +5,16 @@ dimensions = { columns = 130, lines = 40 }
 
 [font]
 # normal = {family = "MonaSpiceNe Nerd Font Mono", style = "Regular"}
-normal = {family = "FiraCode Nerd Font Mono", style = "Retina"}
-# normal = {family = "LigaSauceCodePro Nerd Font", style = "Regular"}
+# normal = {family = "FiraCode Nerd Font Mono", style = "Retina"}
+normal = {family = "LigaSauceCodePro Nerd Font", style = "Regular"}
 italic = {family = "MonaspiceRn Nerd Font Mono", style = "Italic"}
 size = 10
 builtin_box_drawing = false
 
 [cursor]
 style = { shape = "Beam", blinking = "Off" }
+
+[general]
+import = [
+  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+]
