@@ -1,9 +1,0 @@
-detection:
-    interval: 500
-    retries: 6
-egpu:
-    driver: nvidia
-    id: 1215449120607713651
-hooks:
-    egpu: /etc/egpu-switcher/egpu.sh
-    internal: /etc/egpu-switcher/internal.sh
