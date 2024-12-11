@@ -9,7 +9,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
 # Other convenient variables
-export NVIM_CONFIG=~/.config/nvim/init.lua
+# export NVIM_CONFIG=~/.config/nvim/init.lua
 export NVIM_CONFIG_PATH=~/.config/nvim/lua
 
 # Clean up the Home directory
