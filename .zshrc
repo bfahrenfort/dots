@@ -143,7 +143,7 @@ bindkey -s '^F' 'fuck^M' # fix the command
 bindkey '^ ' autosuggest-accept
 # bindkey '^?' backward-kill-word
 # setopt extendedglob
-export ZSH_AUTOSUGGEST_HISTORY_IGNORE="gitstarted.sh *"
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE="(gitstarted\\.sh *|ssh *)"
 
 # Theme it
 # (cat ~/.cache/wal/sequences &)
@@ -159,6 +159,7 @@ alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Dotfile it
 alias lazydots='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias code="codium" # Code it
 alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
+alias clone="cd ~/repos && git clone "
 alias cls="clear"
 alias fyrox-editor="cargo run --package editor --release"
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
@@ -176,6 +177,16 @@ alias launchpad-release="cargo watch -x 'shuttle run --release'"
 # Blender asset library add
 blend () {
     ln -s "$(readlink -f ${1})" "$HOME/Documents/Blender/Assets/link-to-$(basename ${1})"
+}
+# Delete last line in history
+shit () {
+  # Prevent the specified history line from being saved.
+  local HISTORY_IGNORE="${(b)$(fc -ln -1 -1)}"
+  history -d -2 > /dev/null 2>&1
+
+  fc -W
+  fc -p $HISTFILE $HISTSIZE $SAVEHIST
+  print -r "Deleted last line from history."
 }
 # I have a TUI package manager and I want it to use my aur helper
 alias parui="parui -p=aura"
