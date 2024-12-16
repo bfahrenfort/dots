@@ -1,6 +1,6 @@
 # Zsh-specific environment vars go here
 # PATH changes: scripts dir, interpreters dir
-export PATH=$PATH:~/.local/bin:~/interpreters:~/bin
+export PATH=~/.local/bin:~/interpreters:~/bin:$PATH
 
 # Because Fedora is a dummy
 export XDG_CONFIG_HOME=$HOME/.config
