@@ -162,6 +162,8 @@ alias gitstarted="~/.local/bin/gitstarted.sh" # Management for my two accts
 alias clone="cd ~/repos && git clone "
 alias cls="clear"
 alias fyrox-editor="cargo run --package editor --release"
+alias quartz-dev="git restore content"
+alias quartz-antidev="{ test -L content && echo WARN: not in dev } || {cp -r content contentbak; rm -rf content; ln -s /home/b/Documents/Obsidian/Notes/Garden content}" # Quartz, you suck
 unalias -m 'g*' # ZSH git plugin ads some aliases like gcp for git cherry-pick that I hate
 # Configure a sweet little neofetch
 alias starfetch="neowofetch --ascii ~/scripts/ascii_star.txt --ascii_colors 3 "
