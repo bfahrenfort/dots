@@ -202,13 +202,19 @@ serve () { # very quick serve
 archwiki () { 
     local ARCHWIKI_LANG=$(echo "${LANG:-"en"}" | cut -d'_' -f1)
     if [ $# -eq 1 ] ; then
-        local links=($(grep -r -l "$1" /usr/share/doc/arch-wiki/html/$ARCHWIKI_LANG))
+        local links=($(grep -ril "$1" /usr/share/doc/arch-wiki/html/$ARCHWIKI_LANG))
         local count=1
+        local arrangements=()
         for f in $links; do
-            echo $count": "$(echo $f | cut -d'/' -f8-) | column -s : -t
+            arrangements+=("${count} $(echo $f | cut -d / -f8-)\n")
             let count++
         done
-        printf "%s " "Press enter to continue or a number to select a result"
+        echo $arrangements | column -t -R 1
+        if [ -z "$arrangements" ] ; then 
+            echo "No results."
+            return
+        fi
+        printf "%s " "Press enter to continue or a number to select a result:"
         read ans
         if [ -n $ans ] ; then
             # echo ${links[ans]}
