@@ -191,6 +191,36 @@ shit () {
   fc -p $HISTFILE $HISTSIZE $SAVEHIST
   print -r "Deleted last line from history."
 }
+serve () { # very quick serve
+    if [ $# -ne 1 ] ; then
+        echo "Usage: serve <dir>"
+        return
+    fi
+
+    pushd $1 && python -m http.server 8080 && popd
+}
+archwiki () { 
+    local ARCHWIKI_LANG=$(echo "${LANG:-"en"}" | cut -d'_' -f1)
+    if [ $# -eq 1 ] ; then
+        local links=($(grep -r -l "$1" /usr/share/doc/arch-wiki/html/$ARCHWIKI_LANG))
+        local count=1
+        for f in $links; do
+            echo $count": "$(echo $f | cut -d'/' -f8-) | column -s : -t
+            let count++
+        done
+        printf "%s " "Press enter to continue or a number to select a result"
+        read ans
+        if [ -n $ans ] ; then
+            # echo ${links[ans]}
+            local url=$(echo ${links[ans]} | cut -d'/' -f7-)
+            echo $url
+            xdg-open "http://127.0.0.1:8080/"$url  
+        fi
+    else
+        xdg-open "http://127.0.0.1:8080/"$ARCHWIKI_LANG
+    fi
+    serve /usr/share/doc/arch-wiki/html/
+}
 # I have a TUI package manager and I want it to use my aur helper
 alias parui="parui -p=aura"
 
