@@ -75,3 +75,6 @@ export TEXMFLOCAL="/usr/local/share/texmf:/usr/share/texmf"
 
 # Erlang?
 export MIX_HOME="$XDG_DATA_HOME"/mix
+
+# darling
+export DPREFIX="$XDG_DATA_HOME"/darling
