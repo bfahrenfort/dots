@@ -136,6 +136,7 @@ unsetopt completealiases
 
 eval $(thefuck --alias) # Command fixing
 eval "$(zoxide init zsh)" # Better cd
+# eval "$(fzf --zsh)"
 
 # We do a little zsh-autosuggestions customization
 bindkey -s '\e' '' # Pass through esc to nvim
@@ -234,4 +235,6 @@ alias parui="parui -p=aura"
 export EDITOR=nvim
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/gcr/ssh
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+
 
