@@ -1,0 +1,15 @@
+[2025-02-25 09:19:27.893] [info] Using configuration file /home/b/.config/waybar/config.jsonc
+[2025-02-25 09:19:27.897] [info] Using CSS file /home/b/.config/waybar/style.css
+basic_string::_M_create
+[2025-02-25 09:19:27.915] [warning] module sway/workspaces: Disabling module "sway/workspaces", Socket path is empty
+[2025-02-25 09:19:27.919] [warning] module sway/mode: Disabling module "sway/mode", Socket path is empty
+[2025-02-25 09:19:27.922] [warning] module sway/scratchpad: Disabling module "sway/scratchpad", Socket path is empty
+[2025-02-25 09:19:27.930] [error] media stopped unexpectedly, is it endless?
+[2025-02-25 09:19:27.930] [warning] module sway/window: Disabling module "sway/window", Socket path is empty
+[2025-02-25 09:19:27.952] [info] Found device AT Translated Set 2 keyboard at '/dev/input/event2'
+[2025-02-25 09:19:27.959] [warning] module sway/language: Disabling module "sway/language", Socket path is empty
+[2025-02-25 09:19:27.959] [warning] No battery named BAT2
+[2025-02-25 09:19:27.960] [warning] Error while creating the menu : Failed to expand file: $HOME/.config/waybar/power_menu.xml. Menu popup not activated.
+[2025-02-25 09:19:28.100] [error] Failed to query power-profiles-daemon via dbus: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name net.hadess.PowerProfiles was not provided by any .service files
+[2025-02-25 09:19:28.112] [info] Bar configured (width: 1504, height: 30) for output: eDP-1
+[2025-02-25 09:19:29.881] [info] Quitting.

@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wal -i "%h/Pictures/Wallpapers/abstract/cxv7qut4pj221.jpg" -a 85 -b "#000000" --saturate 0.4
+Restart=on-failure

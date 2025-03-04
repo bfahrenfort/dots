@@ -11,6 +11,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 # Other convenient variables
 # export NVIM_CONFIG=~/.config/nvim/init.lua
 export NVIM_CONFIG_PATH=~/.config/nvim/lua
+export NIRI=~/.config/niri/config.kdl
 
 # Clean up the Home directory
 export ANSIBLE_HOME="$XDG_DATA_HOME"/ansible
